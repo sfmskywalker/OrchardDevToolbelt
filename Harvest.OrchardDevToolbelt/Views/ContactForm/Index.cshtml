@@ -1,0 +1,31 @@
+﻿@model Harvest.OrchardDevToolbelt.ViewModels.ContactFormViewModel
+@{
+    Style.Include("Common.js");
+}
+<h1>Contact Us</h1>
+
+@Html.ValidationSummary()
+@using(Html.BeginFormAntiForgeryPost()) {
+    <fieldset>
+        <legend>Contact Form</legend>
+        <ul>
+            <li>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "textMedium" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "textMedium" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Subject)
+                @Html.TextBoxFor(m => m.Subject, new { @class = "textMedium" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.MessageBody)
+                @Html.TextAreaFor(m => m.MessageBody)
+            </li>
+        </ul>
+        <button type="submit">Send</button>
+    </fieldset>
+}

@@ -1,0 +1,8 @@
+﻿@model Harvest.OrchardDevToolbelt.Models.UserProfilePart
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.TwitterAlias, T("Twitter Alias"))
+        @Html.TextBoxFor(m => m.TwitterAlias, new { @class = "textMedium"})
+        <span class="hint">@T("The twitter alias for this user")</span>
+    </div>
+</fieldset>

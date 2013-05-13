@@ -1,0 +1,35 @@
+﻿@using Orchard.ContentManagement
+@model IList<ContentItem>
+@{
+    Style.Include("Admin.css");
+    Script.Require("ShapesBase");
+}
+<table class="admin">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(dynamic entry in Model){
+            <tr>
+                <td>@entry.Id</td>
+                <td>@entry.ContactFormEntryPart.SenderName</td>
+                <td><a href="mailto:@entry.ContactFormEntryPart.SenderEmail">@entry.ContactFormEntryPart.SenderEmail</a></td>
+                <td>@entry.TitlePart.Title</td>
+                <td>@entry.BodyPart.Text</td>
+                <td>@entry.CommonPart.CreatedUtc</td>
+                <td>
+                    @Html.ItemEditLinkWithReturnUrl(T("Details").Text, (IContent) entry) |
+                    @Html.AntiForgeryTokenValueOrchardLink(T("Delete").Text, Url.Action("Delete", new { id = entry.Id }), new { itemprop = "UnsafeUrl RemoveUrl" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

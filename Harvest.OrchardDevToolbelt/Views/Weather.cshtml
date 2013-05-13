@@ -1,0 +1,19 @@
+﻿@using Harvest.OrchardDevToolbelt.Services
+@{
+    Style.Include("Weather.css");
+
+    var weatherInfo = (WeatherInfo)Model.WeatherInfo;
+}
+@if (weatherInfo != null) {
+    <div class="weather">
+        <h2>@weatherInfo.City</h2>
+        <div class="condition">@weatherInfo.Condition</div>
+        <div class="group">
+            <div class="icon"><img src="@Url.Content(weatherInfo.IconUrl)" alt="" /></div>
+            <div class="temperature">@Html.Raw(weatherInfo.Temperature)</div>
+        </div>
+    </div>
+}
+else {
+    <p>Weather service temporarily unavailable</p>
+}

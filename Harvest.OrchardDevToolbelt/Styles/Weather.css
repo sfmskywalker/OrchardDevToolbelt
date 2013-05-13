@@ -1,0 +1,16 @@
+﻿.weather h2 {
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+.weather .condition {
+    margin: 0 0 8px 0;
+}
+
+.weather .icon {
+    float: left;
+}
+
+.weather .temperature {
+    float: left;
+}

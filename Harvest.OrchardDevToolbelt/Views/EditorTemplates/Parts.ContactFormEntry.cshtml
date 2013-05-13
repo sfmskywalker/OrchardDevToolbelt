@@ -1,0 +1,13 @@
+﻿@model Harvest.OrchardDevToolbelt.Models.ContactFormEntryPart
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.SenderName, T("Sender Name"))
+        @Html.TextBoxFor(m => m.SenderName, new { @class = "textMedium"})
+        <span class="hint">@T("The name of the sender")</span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.SenderEmail, T("Sender Email"))
+        @Html.TextBoxFor(m => m.SenderEmail, new { @class = "textMedium"})
+        <span class="hint">@T("The emailaddress of the sender")</span>
+    </div>
+</fieldset>

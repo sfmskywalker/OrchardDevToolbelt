@@ -1,0 +1,17 @@
+﻿table.admin {
+    width: 100%;
+    border: 1px solid #d3d2d2;
+}
+
+table.admin th {
+    background: #f3f4f5;
+    padding: 4px;
+}
+
+table.admin td, table.admin th {
+    padding: 8px 4px 8px 4px;
+}
+
+table.admin td {
+    border-top: 1px solid #d3d2d2;
+}
